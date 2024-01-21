@@ -1,14 +1,14 @@
 package com.mycompany.views;
 
-import com.mycompany.ilib.DAOBooksImpl;
-import com.mycompany.ilib.DAOLendingsImpl;
-import com.mycompany.ilib.DAOUsersImpl;
-import com.mycompany.interfaces.DAOBooks;
-import com.mycompany.interfaces.DAOLendings;
-import com.mycompany.interfaces.DAOUsers;
+import com.mycompany.ilib.DAOLibrosImpl;
+import com.mycompany.ilib.DAOPrestamoImpl;
+import com.mycompany.ilib.DAOUsuarioImpl;
 import com.mycompany.utils.Utils;
 import java.awt.Color;
 import java.util.Date;
+import com.mycompany.interfaces.DAOLibros;
+import com.mycompany.interfaces.DAOPrestamos;
+import com.mycompany.interfaces.DAOUsuarios;
 
 public class Returns extends javax.swing.JPanel {
 
@@ -48,7 +48,6 @@ public class Returns extends javax.swing.JPanel {
         libroIdLbl = new javax.swing.JLabel();
         libroIdTxt = new javax.swing.JTextField();
         button = new javax.swing.JButton();
-        image = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(750, 430));
@@ -65,20 +64,17 @@ public class Returns extends javax.swing.JPanel {
 
         libroIdLbl.setText("Libro ID");
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
+        button.setBackground(new java.awt.Color(0, 0, 0));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Devolver");
         button.setBorderPainted(false);
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonActionPerformed(evt);
             }
         });
-
-        image.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iStock.jpg"))); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -101,13 +97,10 @@ public class Returns extends javax.swing.JPanel {
                     .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(49, 49, 49)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(60, 60, 60))
+                .addGap(161, 161, 161))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,30 +153,30 @@ public class Returns extends javax.swing.JPanel {
         }
 
         try {
-            DAOUsers daoUsers = new DAOUsersImpl();
+            DAOUsuarios daoUsers = new DAOUsuarioImpl();
             
             // Validamos existencia del usuario
-            com.mycompany.models.Users currentUser = daoUsers.getUserById(Integer.parseInt(folio));
+            com.mycompany.models.Usuarios currentUser = daoUsers.getUserById(Integer.parseInt(folio));
             if (currentUser == null) {
                 javax.swing.JOptionPane.showMessageDialog(this, "No se encontró ningún usuario con ese folio. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 folioTxt.requestFocus();
                 return;
             }
             
-            DAOBooks daoBooks = new DAOBooksImpl();
+            DAOLibros daoBooks = new DAOLibrosImpl();
             
             // Validamos existencia del libro
-            com.mycompany.models.Books currentBook = daoBooks.getBookById(Integer.parseInt(bookId));
+            com.mycompany.models.Libros currentBook = daoBooks.getBookById(Integer.parseInt(bookId));
             if (currentBook == null){
                 javax.swing.JOptionPane.showMessageDialog(this, "No se encontró ningún libro con ese ID. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 libroIdTxt.requestFocus();
                 return;
             }
             
-            DAOLendings daoLendings = new DAOLendingsImpl();
+            DAOPrestamos daoLendings = new DAOPrestamoImpl();
             
             // Validamos que el usuario tenga ese libro prestado.
-            com.mycompany.models.Lendings currentLending = daoLendings.getLending(currentUser, currentBook);
+            com.mycompany.models.Prestamos currentLending = daoLendings.getLending(currentUser, currentBook);
             if (currentLending == null) {
                 javax.swing.JOptionPane.showMessageDialog(this, "No se ha podido encontrar el préstamo correspiendote a los datos ingresados. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 libroIdTxt.requestFocus();
@@ -225,7 +218,6 @@ public class Returns extends javax.swing.JPanel {
     private javax.swing.JButton button;
     private javax.swing.JLabel folioLbl;
     private javax.swing.JTextField folioTxt;
-    private javax.swing.JLabel image;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel libroIdLbl;
     private javax.swing.JTextField libroIdTxt;

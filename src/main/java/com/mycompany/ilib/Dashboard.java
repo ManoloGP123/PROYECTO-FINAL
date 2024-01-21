@@ -96,7 +96,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
-        menu.setBackground(new java.awt.Color(13, 71, 161));
+        menu.setBackground(new java.awt.Color(255, 255, 255));
         menu.setPreferredSize(new java.awt.Dimension(270, 640));
 
         appName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -104,14 +104,14 @@ public class Dashboard extends javax.swing.JFrame {
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
 
-        btn_prin.setBackground(new java.awt.Color(21, 101, 192));
+        btn_prin.setBackground(new java.awt.Color(0, 0, 0));
         btn_prin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_prin.setForeground(new java.awt.Color(255, 255, 255));
         btn_prin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline.png"))); // NOI18N
         btn_prin.setText("Principal");
         btn_prin.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_prin.setBorderPainted(false);
-        btn_prin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_prin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_prin.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_prin.setIconTextGap(13);
         btn_prin.setInheritsPopupMenu(true);
@@ -121,14 +121,14 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btn_lends.setBackground(new java.awt.Color(21, 101, 192));
+        btn_lends.setBackground(new java.awt.Color(0, 0, 0));
         btn_lends.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_lends.setForeground(new java.awt.Color(255, 255, 255));
         btn_lends.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calendar-plus.png"))); // NOI18N
         btn_lends.setText("Préstamos");
         btn_lends.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_lends.setBorderPainted(false);
-        btn_lends.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_lends.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_lends.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_lends.setIconTextGap(13);
         btn_lends.setInheritsPopupMenu(true);
@@ -138,14 +138,14 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btn_returns.setBackground(new java.awt.Color(21, 101, 192));
+        btn_returns.setBackground(new java.awt.Color(0, 0, 0));
         btn_returns.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_returns.setForeground(new java.awt.Color(255, 255, 255));
         btn_returns.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calendar-multiple-check.png"))); // NOI18N
         btn_returns.setText("Devoluciones");
         btn_returns.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_returns.setBorderPainted(false);
-        btn_returns.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_returns.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_returns.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_returns.setIconTextGap(13);
         btn_returns.setInheritsPopupMenu(true);
@@ -155,14 +155,14 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btn_users.setBackground(new java.awt.Color(21, 101, 192));
+        btn_users.setBackground(new java.awt.Color(0, 0, 0));
         btn_users.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_users.setForeground(new java.awt.Color(255, 255, 255));
         btn_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account-multiple.png"))); // NOI18N
         btn_users.setText("Usuarios");
         btn_users.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_users.setBorderPainted(false);
-        btn_users.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_users.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_users.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_users.setIconTextGap(13);
         btn_users.setInheritsPopupMenu(true);
@@ -172,14 +172,14 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btn_books.setBackground(new java.awt.Color(21, 101, 192));
+        btn_books.setBackground(new java.awt.Color(0, 0, 0));
         btn_books.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_books.setForeground(new java.awt.Color(255, 255, 255));
         btn_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book-open-page-variant.png"))); // NOI18N
         btn_books.setText("Libros");
         btn_books.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_books.setBorderPainted(false);
-        btn_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_books.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_books.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_books.setIconTextGap(13);
         btn_books.setInheritsPopupMenu(true);
@@ -189,14 +189,14 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btn_reports.setBackground(new java.awt.Color(21, 101, 192));
+        btn_reports.setBackground(new java.awt.Color(0, 0, 0));
         btn_reports.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_reports.setForeground(new java.awt.Color(255, 255, 255));
         btn_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file-chart.png"))); // NOI18N
         btn_reports.setText("Reportes");
         btn_reports.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_reports.setBorderPainted(false);
-        btn_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_reports.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_reports.setIconTextGap(13);
         btn_reports.setInheritsPopupMenu(true);
@@ -250,7 +250,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(btn_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
-        header.setBackground(new java.awt.Color(25, 118, 210));
+        header.setBackground(new java.awt.Color(0, 0, 0));
         header.setPreferredSize(new java.awt.Dimension(744, 150));
 
         navText.setText("Administración/Control/Biblioteca");
@@ -281,7 +281,7 @@ public class Dashboard extends javax.swing.JFrame {
         content.setBackground(new java.awt.Color(255, 255, 255));
         content.setLayout(new java.awt.BorderLayout());
 
-        mensaje.setText("We ♥  the reading!");
+        mensaje.setText("Bienvenidos");
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -329,7 +329,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_prinActionPerformed
 
     private void btn_lendsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lendsActionPerformed
-        ShowJPanel(new Lendings());
+        ShowJPanel(new Prestamos());
     }//GEN-LAST:event_btn_lendsActionPerformed
 
     private void btn_returnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_returnsActionPerformed
@@ -337,11 +337,11 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_returnsActionPerformed
 
     private void btn_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usersActionPerformed
-        ShowJPanel(new Users());
+        ShowJPanel(new Usuarios());
     }//GEN-LAST:event_btn_usersActionPerformed
 
     private void btn_booksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_booksActionPerformed
-        ShowJPanel(new Books());
+        ShowJPanel(new Libros());
     }//GEN-LAST:event_btn_booksActionPerformed
 
     private void btn_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportsActionPerformed

@@ -1,6 +1,6 @@
 package com.mycompany.models;
 
-public class Books {
+public class Libros {
     private int id;
     private String title;
     private String date;

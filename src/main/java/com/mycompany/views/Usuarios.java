@@ -1,14 +1,14 @@
 package com.mycompany.views;
 
-import com.mycompany.ilib.DAOUsersImpl;
+import com.mycompany.ilib.DAOUsuarioImpl;
 import com.mycompany.ilib.Dashboard;
-import com.mycompany.interfaces.DAOUsers;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
+import com.mycompany.interfaces.DAOUsuarios;
 
-public class Users extends javax.swing.JPanel {
+public class Usuarios extends javax.swing.JPanel {
 
-    public Users() {
+    public Usuarios() {
         initComponents();
         InitStyles();
         LoadUsers();
@@ -22,7 +22,7 @@ public class Users extends javax.swing.JPanel {
 
     private void LoadUsers() {
         try {
-            DAOUsers dao = new DAOUsersImpl();
+            DAOUsuarios dao = new DAOUsuarioImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             dao.listar("").forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
         } catch (Exception e) {
@@ -55,12 +55,12 @@ public class Users extends javax.swing.JPanel {
 
         title.setText("Usuarios");
 
-        searchButton.setBackground(new java.awt.Color(18, 90, 173));
+        searchButton.setBackground(new java.awt.Color(0, 0, 0));
         searchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("Buscar");
         searchButton.setBorderPainted(false);
-        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
@@ -99,36 +99,36 @@ public class Users extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        deleteButton.setBackground(new java.awt.Color(18, 90, 173));
+        deleteButton.setBackground(new java.awt.Color(0, 0, 0));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(255, 255, 255));
         deleteButton.setText("Borrar");
         deleteButton.setBorderPainted(false);
-        deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
 
-        editButton.setBackground(new java.awt.Color(18, 90, 173));
+        editButton.setBackground(new java.awt.Color(0, 0, 0));
         editButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         editButton.setForeground(new java.awt.Color(255, 255, 255));
         editButton.setText("Editar");
         editButton.setBorderPainted(false);
-        editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
             }
         });
 
-        addButton.setBackground(new java.awt.Color(18, 90, 173));
+        addButton.setBackground(new java.awt.Color(0, 0, 0));
         addButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         addButton.setForeground(new java.awt.Color(255, 255, 255));
         addButton.setText("Nuevo");
         addButton.setBorderPainted(false);
-        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
@@ -197,11 +197,11 @@ public class Users extends javax.swing.JPanel {
     }//GEN-LAST:event_jTable1MousePressed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        Dashboard.ShowJPanel(new UpUsers());
+        Dashboard.ShowJPanel(new UpUsuario());
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        DAOUsers dao = new DAOUsersImpl();
+        DAOUsuarios dao = new DAOUsuarioImpl();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         if (jTable1.getSelectedRows().length < 1) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debes seleccionar uno o más usuarios a eliminar.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -221,8 +221,8 @@ public class Users extends javax.swing.JPanel {
         if (jTable1.getSelectedRow() > -1) {
             try {
                 int userId = (int) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
-                DAOUsers dao = new DAOUsersImpl();
-                Dashboard.ShowJPanel(new UpUsers(dao.getUserById(userId)));
+                DAOUsuarios dao = new DAOUsuarioImpl();
+                Dashboard.ShowJPanel(new UpUsuario(dao.getUserById(userId)));
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -233,7 +233,7 @@ public class Users extends javax.swing.JPanel {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         try {
-            DAOUsers dao = new DAOUsersImpl();
+            DAOUsuarios dao = new DAOUsuarioImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.setRowCount(0);
             dao.listar(userSearch.getText()).forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));

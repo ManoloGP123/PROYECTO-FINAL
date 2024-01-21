@@ -1,6 +1,6 @@
 package com.mycompany.models;
 
-public class Users {
+public class Usuarios {
     private int id;
     private String name;
     private String last_name_p;

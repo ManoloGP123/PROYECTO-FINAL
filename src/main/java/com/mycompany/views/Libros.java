@@ -1,14 +1,14 @@
 package com.mycompany.views;
 
-import com.mycompany.ilib.DAOBooksImpl;
+import com.mycompany.ilib.DAOLibrosImpl;
 import com.mycompany.ilib.Dashboard;
-import com.mycompany.interfaces.DAOBooks;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
+import com.mycompany.interfaces.DAOLibros;
 
-public class Books extends javax.swing.JPanel {
+public class Libros extends javax.swing.JPanel {
 
-    public Books() {
+    public Libros() {
         initComponents();
         InitStyles();
         LoadBooks();
@@ -22,7 +22,7 @@ public class Books extends javax.swing.JPanel {
     
     private void LoadBooks() {
         try {
-            DAOBooks dao = new DAOBooksImpl();
+            DAOLibros dao = new DAOLibrosImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             dao.listar("").forEach((u) -> model.addRow(new Object[]{u.getId(), u.getTitle(), u.getDate(), u.getAuthor(), u.getCategory(), u.getEdit(), u.getLang(), u.getPages(), u.getDescription(), u.getEjemplares(), u.getStock(), u.getAvailable()}));
         } catch (Exception e) {
@@ -55,48 +55,48 @@ public class Books extends javax.swing.JPanel {
 
         title.setText("Libros");
 
-        searchButton.setBackground(new java.awt.Color(18, 90, 173));
+        searchButton.setBackground(new java.awt.Color(0, 0, 0));
         searchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("Buscar");
         searchButton.setBorderPainted(false);
-        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
             }
         });
 
-        deleteButton.setBackground(new java.awt.Color(18, 90, 173));
+        deleteButton.setBackground(new java.awt.Color(0, 0, 0));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(255, 255, 255));
         deleteButton.setText("Borrar");
         deleteButton.setBorderPainted(false);
-        deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
 
-        editButton.setBackground(new java.awt.Color(18, 90, 173));
+        editButton.setBackground(new java.awt.Color(0, 0, 0));
         editButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         editButton.setForeground(new java.awt.Color(255, 255, 255));
         editButton.setText("Editar");
         editButton.setBorderPainted(false);
-        editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
             }
         });
 
-        addButton.setBackground(new java.awt.Color(18, 90, 173));
+        addButton.setBackground(new java.awt.Color(0, 0, 0));
         addButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         addButton.setForeground(new java.awt.Color(255, 255, 255));
         addButton.setText("Nuevo");
         addButton.setBorderPainted(false);
-        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
@@ -197,11 +197,11 @@ public class Books extends javax.swing.JPanel {
     }//GEN-LAST:event_jTable1MousePressed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        Dashboard.ShowJPanel(new UpBooks());
+        Dashboard.ShowJPanel(new UpLibros());
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        DAOBooks dao = new DAOBooksImpl();
+        DAOLibros dao = new DAOLibrosImpl();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         if (jTable1.getSelectedRows().length < 1) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debes seleccionar uno o más libros a eliminar.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -221,8 +221,8 @@ public class Books extends javax.swing.JPanel {
         if (jTable1.getSelectedRow() > -1) {
             try {
                 int bookId = (int) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
-                DAOBooks dao = new DAOBooksImpl();
-                Dashboard.ShowJPanel(new UpBooks(dao.getBookById(bookId)));
+                DAOLibros dao = new DAOLibrosImpl();
+                Dashboard.ShowJPanel(new UpLibros(dao.getBookById(bookId)));
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -233,7 +233,7 @@ public class Books extends javax.swing.JPanel {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         try {
-            DAOBooks dao = new DAOBooksImpl();
+            DAOLibros dao = new DAOLibrosImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.setRowCount(0);
             dao.listar(bookSearch.getText()).forEach((u) -> model.addRow(new Object[]{u.getId(), u.getTitle(), u.getDate(), u.getAuthor(), u.getCategory(), u.getEdit(), u.getLang(), u.getPages(), u.getDescription(), u.getEjemplares(), u.getStock(), u.getAvailable()}));

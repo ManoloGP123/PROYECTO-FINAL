@@ -1,17 +1,17 @@
 package com.mycompany.ilib;
 
-import com.mycompany.db.Database;
-import com.mycompany.interfaces.DAOUsers;
-import com.mycompany.models.Users;
+import com.mycompany.db.Conexion;
+import com.mycompany.models.Usuarios;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import com.mycompany.interfaces.DAOUsuarios;
 
-public class DAOUsersImpl extends Database implements DAOUsers {
+public class DAOUsuarioImpl extends Conexion implements DAOUsuarios {
 
     @Override
-    public void registrar(Users user) throws Exception {
+    public void registrar(Usuarios user) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("INSERT INTO users(name, last_name_p, last_name_m, domicilio, tel) VALUES(?,?,?,?,?);");
@@ -30,7 +30,7 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     }
 
     @Override
-    public void modificar(Users user) throws Exception {
+    public void modificar(Usuarios user) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("UPDATE users SET name = ?, last_name_p = ?, last_name_m = ?, domicilio = ?, tel = ? WHERE id = ?");
@@ -65,8 +65,8 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     }
 
     @Override
-    public List<Users> listar(String name) throws Exception {
-        List<Users> lista = null;
+    public List<Usuarios> listar(String name) throws Exception {
+        List<Usuarios> lista = null;
         try {
             this.Conectar();
             String Query = name.isEmpty() ? "SELECT * FROM users;" : "SELECT * FROM users WHERE name LIKE '%" + name + "%';";
@@ -75,7 +75,7 @@ public class DAOUsersImpl extends Database implements DAOUsers {
             lista = new ArrayList();
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                Users user = new Users();
+                Usuarios user = new Usuarios();
                 user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
                 user.setLast_name_p(rs.getString("last_name_p"));
@@ -97,8 +97,8 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     }
 
     @Override
-    public Users getUserById(int userId) throws Exception {
-        Users user = null;
+    public Usuarios getUserById(int userId) throws Exception {
+        Usuarios user = null;
         
         try {
             this.Conectar();
@@ -107,7 +107,7 @@ public class DAOUsersImpl extends Database implements DAOUsers {
             
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                user = new Users();
+                user = new Usuarios();
                 user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
                 user.setLast_name_p(rs.getString("last_name_p"));
@@ -128,7 +128,7 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     }
 
     @Override
-    public void sancionar(Users user) throws Exception {
+    public void sancionar(Usuarios user) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("UPDATE users SET sanctions = ?, sanc_money = ? WHERE id = ?");

@@ -1,6 +1,6 @@
 package com.mycompany.models;
 
-public class Lendings {
+public class Prestamos {
     private int id;
     private int user_id;
     private int book_id;

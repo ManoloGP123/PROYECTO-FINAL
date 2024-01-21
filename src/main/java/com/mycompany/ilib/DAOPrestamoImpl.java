@@ -1,19 +1,19 @@
 package com.mycompany.ilib;
 
-import com.mycompany.db.Database;
-import com.mycompany.interfaces.DAOLendings;
-import com.mycompany.models.Books;
-import com.mycompany.models.Lendings;
-import com.mycompany.models.Users;
+import com.mycompany.db.Conexion;
+import com.mycompany.models.Libros;
+import com.mycompany.models.Prestamos;
+import com.mycompany.models.Usuarios;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import com.mycompany.interfaces.DAOPrestamos;
 
-public class DAOLendingsImpl extends Database implements DAOLendings {
+public class DAOPrestamoImpl extends Conexion implements DAOPrestamos {
 
     @Override
-    public void registrar(Lendings lending) throws Exception {
+    public void registrar(Prestamos lending) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("INSERT INTO lendings(user_id, book_id, date_out) VALUES(?,?,?);");
@@ -30,7 +30,7 @@ public class DAOLendingsImpl extends Database implements DAOLendings {
     }
 
     @Override
-    public void modificar(Lendings lending) throws Exception {
+    public void modificar(Prestamos lending) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("UPDATE lendings SET user_id = ?, book_id = ?, date_out = ?, date_return = ? WHERE id = ?");
@@ -49,8 +49,8 @@ public class DAOLendingsImpl extends Database implements DAOLendings {
     }
 
     @Override
-    public Lendings getLending(Users user, Books book) throws Exception {
-        Lendings lending = null;
+    public Prestamos getLending(Usuarios user, Libros book) throws Exception {
+        Prestamos lending = null;
         
         try {
             this.Conectar();
@@ -60,7 +60,7 @@ public class DAOLendingsImpl extends Database implements DAOLendings {
             
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                lending = new Lendings();
+                lending = new Prestamos();
                 lending.setId(rs.getInt("id"));
                 lending.setUser_id(rs.getInt("user_id"));
                 lending.setBook_id(rs.getInt("book_id"));
@@ -80,8 +80,8 @@ public class DAOLendingsImpl extends Database implements DAOLendings {
     }
 
     @Override
-    public List<Lendings> listar() throws Exception {
-        List<Lendings> lista = null;
+    public List<Prestamos> listar() throws Exception {
+        List<Prestamos> lista = null;
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("SELECT * FROM lendings ORDER BY id DESC");
@@ -89,7 +89,7 @@ public class DAOLendingsImpl extends Database implements DAOLendings {
             lista = new ArrayList();
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                Lendings lending = new Lendings();
+                Prestamos lending = new Prestamos();
                 lending.setId(rs.getInt("id"));
                 lending.setUser_id(rs.getInt("user_id"));
                 lending.setBook_id(rs.getInt("book_id"));

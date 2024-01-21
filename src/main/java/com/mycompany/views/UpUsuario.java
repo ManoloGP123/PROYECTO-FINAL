@@ -1,20 +1,20 @@
 package com.mycompany.views;
 
-import com.mycompany.ilib.DAOUsersImpl;
-import com.mycompany.interfaces.DAOUsers;
+import com.mycompany.ilib.DAOUsuarioImpl;
 import java.awt.Color;
+import com.mycompany.interfaces.DAOUsuarios;
 
-public class UpUsers extends javax.swing.JPanel {
+public class UpUsuario extends javax.swing.JPanel {
 
     boolean isEdition = false;
-    com.mycompany.models.Users userEdition;
+    com.mycompany.models.Usuarios userEdition;
 
-    public UpUsers() {
+    public UpUsuario() {
         initComponents();
         InitStyles();
     }
 
-    public UpUsers(com.mycompany.models.Users user) {
+    public UpUsuario(com.mycompany.models.Usuarios user) {
         initComponents();
         isEdition = true;
         userEdition = user;
@@ -88,12 +88,12 @@ public class UpUsers extends javax.swing.JPanel {
 
         domTxt.setToolTipText("");
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
+        button.setBackground(new java.awt.Color(0, 0, 0));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Registrar");
         button.setBorderPainted(false);
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonActionPerformed(evt);
@@ -153,11 +153,11 @@ public class UpUsers extends javax.swing.JPanel {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(nameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                                .addComponent(nameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(apPLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                                .addComponent(apPLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(apPTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -207,7 +207,7 @@ public class UpUsers extends javax.swing.JPanel {
             return;
         }
 
-        com.mycompany.models.Users user = isEdition ? userEdition : new com.mycompany.models.Users();
+        com.mycompany.models.Usuarios user = isEdition ? userEdition : new com.mycompany.models.Usuarios();
         user.setName(nombre);
         user.setLast_name_p(apP);
         user.setLast_name_m(apM);
@@ -215,7 +215,7 @@ public class UpUsers extends javax.swing.JPanel {
         user.setTel(tel);
 
         try {
-            DAOUsers dao = new DAOUsersImpl();
+            DAOUsuarios dao = new DAOUsuarioImpl();
 
             if (!isEdition) {
                 dao.registrar(user);

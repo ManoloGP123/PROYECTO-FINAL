@@ -1,17 +1,17 @@
 package com.mycompany.views;
 
-import com.mycompany.ilib.DAOBooksImpl;
-import com.mycompany.ilib.DAOLendingsImpl;
-import com.mycompany.ilib.DAOUsersImpl;
-import com.mycompany.interfaces.DAOBooks;
-import com.mycompany.interfaces.DAOLendings;
-import com.mycompany.interfaces.DAOUsers;
+import com.mycompany.ilib.DAOLibrosImpl;
+import com.mycompany.ilib.DAOPrestamoImpl;
+import com.mycompany.ilib.DAOUsuarioImpl;
 import com.mycompany.utils.Utils;
 import java.awt.Color;
+import com.mycompany.interfaces.DAOLibros;
+import com.mycompany.interfaces.DAOPrestamos;
+import com.mycompany.interfaces.DAOUsuarios;
 
-public class Lendings extends javax.swing.JPanel {
+public class Prestamos extends javax.swing.JPanel {
 
-    public Lendings() {
+    public Prestamos() {
         initComponents();
         InitStyles();
     }
@@ -41,7 +41,6 @@ public class Lendings extends javax.swing.JPanel {
         libroIdLbl = new javax.swing.JLabel();
         libroIdTxt = new javax.swing.JTextField();
         button = new javax.swing.JButton();
-        image = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -51,34 +50,32 @@ public class Lendings extends javax.swing.JPanel {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setPreferredSize(new java.awt.Dimension(200, 10));
 
-        folioLbl.setText("Folio Usuario");
+        folioLbl.setText("Id Usuario");
 
         folioTxt.setToolTipText("");
 
         libroIdLbl.setText("Libro ID");
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
+        button.setBackground(new java.awt.Color(0, 0, 0));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Prestar");
         button.setBorderPainted(false);
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonActionPerformed(evt);
             }
         });
 
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prestamo.gif"))); // NOI18N
-
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(450, 450, 450)
+                .addGap(30, 30, 30)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(folioLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -90,9 +87,6 @@ public class Lendings extends javax.swing.JPanel {
                     .addComponent(libroIdTxt)
                     .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(20, 20, 20))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(193, 193, 193))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +106,6 @@ public class Lendings extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(110, 110, 110))
-            .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -147,20 +140,20 @@ public class Lendings extends javax.swing.JPanel {
         }
 
         try {
-            DAOUsers daoUsers = new DAOUsersImpl();
+            DAOUsuarios daoUsers = new DAOUsuarioImpl();
             
             // Validamos existencia del usuario
-            com.mycompany.models.Users currentUser = daoUsers.getUserById(Integer.parseInt(folio));
+            com.mycompany.models.Usuarios currentUser = daoUsers.getUserById(Integer.parseInt(folio));
             if (currentUser == null) {
                 javax.swing.JOptionPane.showMessageDialog(this, "No se encontró ningún usuario con ese folio. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 folioTxt.requestFocus();
                 return;
             }
             
-            DAOBooks daoBooks = new DAOBooksImpl();
+            DAOLibros daoBooks = new DAOLibrosImpl();
             
             // Validamos existencia del libro
-            com.mycompany.models.Books currentBook = daoBooks.getBookById(Integer.parseInt(bookId));
+            com.mycompany.models.Libros currentBook = daoBooks.getBookById(Integer.parseInt(bookId));
             if (currentBook == null){
                 javax.swing.JOptionPane.showMessageDialog(this, "No se encontró ningún libro con ese ID. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 libroIdTxt.requestFocus();
@@ -173,10 +166,10 @@ public class Lendings extends javax.swing.JPanel {
                 return;
             }
             
-            DAOLendings daoLendings = new DAOLendingsImpl();
+            DAOPrestamos daoLendings = new DAOPrestamoImpl();
             
             // Validamos que el usuario no tenga ya ese libro prestado.
-            com.mycompany.models.Lendings currentLending = daoLendings.getLending(currentUser, currentBook);
+            com.mycompany.models.Prestamos currentLending = daoLendings.getLending(currentUser, currentBook);
             if (currentLending != null) {
                 javax.swing.JOptionPane.showMessageDialog(this, "Esa persona ya cuenta con el préstamo de ese mismo Libro. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 libroIdTxt.requestFocus();
@@ -184,7 +177,7 @@ public class Lendings extends javax.swing.JPanel {
             }
 
             // Todo OK: Prestamos libro.
-            com.mycompany.models.Lendings lending = new com.mycompany.models.Lendings();
+            com.mycompany.models.Prestamos lending = new com.mycompany.models.Prestamos();
             lending.setBook_id(currentBook.getId());
             lending.setUser_id(currentUser.getId());
             lending.setDate_out(Utils.getFechaActual());
@@ -208,7 +201,6 @@ public class Lendings extends javax.swing.JPanel {
     private javax.swing.JButton button;
     private javax.swing.JLabel folioLbl;
     private javax.swing.JTextField folioTxt;
-    private javax.swing.JLabel image;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel libroIdLbl;
     private javax.swing.JTextField libroIdTxt;

@@ -1,21 +1,21 @@
 package com.mycompany.views;
 
-import com.mycompany.ilib.DAOBooksImpl;
-import com.mycompany.interfaces.DAOBooks;
+import com.mycompany.ilib.DAOLibrosImpl;
 import com.mycompany.utils.Utils;
 import java.awt.Color;
+import com.mycompany.interfaces.DAOLibros;
 
-public class UpBooks extends javax.swing.JPanel {
+public class UpLibros extends javax.swing.JPanel {
 
     boolean isEdition = false;
-    com.mycompany.models.Books bookEdition;
+    com.mycompany.models.Libros bookEdition;
 
-    public UpBooks() {
+    public UpLibros() {
         initComponents();
         InitStyles();
     }
 
-    public UpBooks(com.mycompany.models.Books book) {
+    public UpLibros(com.mycompany.models.Libros book) {
         initComponents();
         isEdition = true;
         bookEdition = book;
@@ -138,12 +138,12 @@ public class UpBooks extends javax.swing.JPanel {
 
         ejemTxt.setToolTipText("");
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
+        button.setBackground(new java.awt.Color(0, 0, 0));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Subir");
         button.setBorderPainted(false);
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonActionPerformed(evt);
@@ -311,7 +311,7 @@ public class UpBooks extends javax.swing.JPanel {
             return;
         }
 
-        com.mycompany.models.Books book = isEdition ? bookEdition : new com.mycompany.models.Books();
+        com.mycompany.models.Libros book = isEdition ? bookEdition : new com.mycompany.models.Libros();
         book.setTitle(mtitle);
         book.setDate(date);
         book.setAuthor(author);
@@ -325,7 +325,7 @@ public class UpBooks extends javax.swing.JPanel {
         book.setAvailable(Integer.parseInt(disp));
 
         try {
-            DAOBooks dao = new DAOBooksImpl();
+            DAOLibros dao = new DAOLibrosImpl();
 
             if (!isEdition) {
                 dao.registrar(book);

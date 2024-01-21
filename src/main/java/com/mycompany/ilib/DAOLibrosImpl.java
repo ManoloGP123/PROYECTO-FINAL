@@ -1,17 +1,17 @@
 package com.mycompany.ilib;
 
-import com.mycompany.db.Database;
-import com.mycompany.interfaces.DAOBooks;
-import com.mycompany.models.Books;
+import com.mycompany.db.Conexion;
+import com.mycompany.models.Libros;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import com.mycompany.interfaces.DAOLibros;
 
-public class DAOBooksImpl extends Database implements DAOBooks {
+public class DAOLibrosImpl extends Conexion implements DAOLibros {
 
     @Override
-    public void registrar(Books book) throws Exception {
+    public void registrar(Libros book) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("INSERT INTO books(title, date, author, category, edit, lang, pages, description, ejemplares, stock, available) VALUES(?,?,?,?,?,?,?,?,?,?,?);");
@@ -36,7 +36,7 @@ public class DAOBooksImpl extends Database implements DAOBooks {
     }
 
     @Override
-    public void modificar(Books book) throws Exception {
+    public void modificar(Libros book) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("UPDATE books SET title = ?, date = ?, author = ?, category = ?, edit = ?, lang = ?, pages = ?, description = ?, ejemplares = ?, stock = ?, available = ? WHERE id = ?");
@@ -77,8 +77,8 @@ public class DAOBooksImpl extends Database implements DAOBooks {
     }
 
     @Override
-    public List<Books> listar(String title) throws Exception {
-        List<Books> lista = null;
+    public List<Libros> listar(String title) throws Exception {
+        List<Libros> lista = null;
         try {
             this.Conectar();
             String Query = title.isEmpty() ? "SELECT * FROM books;" : "SELECT * FROM books WHERE title LIKE '%" + title + "%';";
@@ -87,7 +87,7 @@ public class DAOBooksImpl extends Database implements DAOBooks {
             lista = new ArrayList();
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                Books book = new Books();
+                Libros book = new Libros();
                 book.setId(rs.getInt("id"));
                 book.setTitle(rs.getString("title"));
                 book.setDate(rs.getString("date"));
@@ -113,8 +113,8 @@ public class DAOBooksImpl extends Database implements DAOBooks {
     }
 
     @Override
-    public Books getBookById(int bookId) throws Exception {
-        Books book = null;
+    public Libros getBookById(int bookId) throws Exception {
+        Libros book = null;
         
         try {
             this.Conectar();
@@ -123,7 +123,7 @@ public class DAOBooksImpl extends Database implements DAOBooks {
             
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                book = new Books();
+                book = new Libros();
                 book.setId(rs.getInt("id"));
                 book.setTitle(rs.getString("title"));
                 book.setDate(rs.getString("date"));
