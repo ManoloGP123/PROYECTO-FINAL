@@ -68,6 +68,7 @@ public class Returns extends javax.swing.JPanel {
         button.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Devolver");
+        button.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         button.setBorderPainted(false);
         button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addActionListener(new java.awt.event.ActionListener() {
