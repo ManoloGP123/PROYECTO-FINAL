@@ -21,7 +21,7 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
 /**
  *
- * @author Antonio
+ * @author Erick Guaman
  */
 public class Dashboard extends javax.swing.JFrame {
 
@@ -105,9 +105,8 @@ public class Dashboard extends javax.swing.JFrame {
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
 
         btn_prin.setBackground(new java.awt.Color(0, 0, 0));
-        btn_prin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_prin.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         btn_prin.setForeground(new java.awt.Color(255, 255, 255));
-        btn_prin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline.png"))); // NOI18N
         btn_prin.setText("Principal");
         btn_prin.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_prin.setBorderPainted(false);
@@ -122,9 +121,8 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_lends.setBackground(new java.awt.Color(0, 0, 0));
-        btn_lends.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_lends.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         btn_lends.setForeground(new java.awt.Color(255, 255, 255));
-        btn_lends.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calendar-plus.png"))); // NOI18N
         btn_lends.setText("Préstamos");
         btn_lends.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_lends.setBorderPainted(false);
@@ -139,9 +137,8 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_returns.setBackground(new java.awt.Color(0, 0, 0));
-        btn_returns.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_returns.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         btn_returns.setForeground(new java.awt.Color(255, 255, 255));
-        btn_returns.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calendar-multiple-check.png"))); // NOI18N
         btn_returns.setText("Devoluciones");
         btn_returns.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_returns.setBorderPainted(false);
@@ -156,9 +153,8 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_users.setBackground(new java.awt.Color(0, 0, 0));
-        btn_users.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_users.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         btn_users.setForeground(new java.awt.Color(255, 255, 255));
-        btn_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account-multiple.png"))); // NOI18N
         btn_users.setText("Usuarios");
         btn_users.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_users.setBorderPainted(false);
@@ -173,9 +169,8 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_books.setBackground(new java.awt.Color(0, 0, 0));
-        btn_books.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_books.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         btn_books.setForeground(new java.awt.Color(255, 255, 255));
-        btn_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book-open-page-variant.png"))); // NOI18N
         btn_books.setText("Libros");
         btn_books.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_books.setBorderPainted(false);
@@ -190,9 +185,8 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_reports.setBackground(new java.awt.Color(0, 0, 0));
-        btn_reports.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_reports.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         btn_reports.setForeground(new java.awt.Color(255, 255, 255));
-        btn_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file-chart.png"))); // NOI18N
         btn_reports.setText("Reportes");
         btn_reports.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_reports.setBorderPainted(false);

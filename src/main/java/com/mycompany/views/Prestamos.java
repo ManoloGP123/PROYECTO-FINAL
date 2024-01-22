@@ -57,7 +57,7 @@ public class Prestamos extends javax.swing.JPanel {
         libroIdLbl.setText("Libro ID");
 
         button.setBackground(new java.awt.Color(0, 0, 0));
-        button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        button.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Prestar");
         button.setBorderPainted(false);

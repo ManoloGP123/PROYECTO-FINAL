@@ -56,7 +56,7 @@ public class Usuarios extends javax.swing.JPanel {
         title.setText("Usuarios");
 
         searchButton.setBackground(new java.awt.Color(0, 0, 0));
-        searchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        searchButton.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("Buscar");
         searchButton.setBorderPainted(false);
@@ -100,7 +100,7 @@ public class Usuarios extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         deleteButton.setBackground(new java.awt.Color(0, 0, 0));
-        deleteButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        deleteButton.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(255, 255, 255));
         deleteButton.setText("Borrar");
         deleteButton.setBorderPainted(false);
@@ -112,7 +112,7 @@ public class Usuarios extends javax.swing.JPanel {
         });
 
         editButton.setBackground(new java.awt.Color(0, 0, 0));
-        editButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        editButton.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         editButton.setForeground(new java.awt.Color(255, 255, 255));
         editButton.setText("Editar");
         editButton.setBorderPainted(false);
@@ -124,7 +124,7 @@ public class Usuarios extends javax.swing.JPanel {
         });
 
         addButton.setBackground(new java.awt.Color(0, 0, 0));
-        addButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        addButton.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         addButton.setForeground(new java.awt.Color(255, 255, 255));
         addButton.setText("Nuevo");
         addButton.setBorderPainted(false);
@@ -171,7 +171,7 @@ public class Usuarios extends javax.swing.JPanel {
                     .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteButton)

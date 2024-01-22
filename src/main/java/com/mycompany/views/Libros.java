@@ -56,7 +56,7 @@ public class Libros extends javax.swing.JPanel {
         title.setText("Libros");
 
         searchButton.setBackground(new java.awt.Color(0, 0, 0));
-        searchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        searchButton.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("Buscar");
         searchButton.setBorderPainted(false);
@@ -68,7 +68,7 @@ public class Libros extends javax.swing.JPanel {
         });
 
         deleteButton.setBackground(new java.awt.Color(0, 0, 0));
-        deleteButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        deleteButton.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(255, 255, 255));
         deleteButton.setText("Borrar");
         deleteButton.setBorderPainted(false);
@@ -80,7 +80,7 @@ public class Libros extends javax.swing.JPanel {
         });
 
         editButton.setBackground(new java.awt.Color(0, 0, 0));
-        editButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        editButton.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         editButton.setForeground(new java.awt.Color(255, 255, 255));
         editButton.setText("Editar");
         editButton.setBorderPainted(false);
@@ -92,7 +92,7 @@ public class Libros extends javax.swing.JPanel {
         });
 
         addButton.setBackground(new java.awt.Color(0, 0, 0));
-        addButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        addButton.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         addButton.setForeground(new java.awt.Color(255, 255, 255));
         addButton.setText("Nuevo");
         addButton.setBorderPainted(false);
@@ -150,11 +150,11 @@ public class Libros extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(427, 427, 427)
-                                .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                                .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                                .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                                .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(bookSearch)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -171,7 +171,7 @@ public class Libros extends javax.swing.JPanel {
                     .addComponent(bookSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteButton)
