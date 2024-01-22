@@ -60,7 +60,7 @@ public class Returns extends javax.swing.JPanel {
 
         title.setText("Devolución de Libro");
 
-        folioLbl.setText("Folio Usuario");
+        folioLbl.setText("Id Usuario");
 
         libroIdLbl.setText("Libro ID");
 
